@@ -1,0 +1,55 @@
+## ============================
+## Bindings for index and pager
+## ============================
+
+bind index \t next-new
+bind pager \t next-new
+bind index ' ' next-unread
+bind pager ' ' next-unread
+bind index V show-version
+bind pager V show-version
+bind index a create-alias
+bind pager a create-alias
+
+## ==============================================
+## Bindings for editing and reloading the .muttrc
+## ==============================================
+
+macro generic ,vu ":source ~/.muttrc\r"
+
+# ===========================
+# Bindings for pager
+# ===========================
+
+bind pager / search
+bind pager L list-reply
+bind pager b bounce-message
+bind pager f forward-message
+bind pager m mail
+bind pager g group-reply
+bind pager j next-line
+bind pager k previous-line
+bind pager : enter-command
+bind pager p previous-undeleted
+bind pager n next-undeleted
+bind pager \n next-new
+bind compose \n send-message
+bind compose s send-message
+bind pager ,p print-message
+
+## =====================================
+## Tom's cursor movement system [tm] ;-)
+## =====================================
+
+bind pager <up> previous-line
+bind pager <down> next-line
+bind pager <left> exit
+bind pager <right> view-attachments
+bind attach <left> exit
+bind attach <right> view-attach
+bind index <right> display-message
+macro index <left> "c?<tab>"
+bind browser <right> select-entry
+bind browser <left> exit
+
+macro index     h "c?\t" #show folder view when I hit 'h'

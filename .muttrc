@@ -1,0 +1,73 @@
+# Various Client Settings
+
+set realname=""
+
+#set query_command=
+set copy=no
+set beep_new
+set ascii_chars=yes
+set reverse_name
+set move=no
+unset mark_old
+set forward_quote
+set include
+set fast_reply="yes"
+set indent_str="> "
+set sendmail="/usr/bin/msmtp"
+set edit_headers
+#set postponed=+Gmail/drafts
+set sort=threads
+set sort_aux=reverse-date-received
+set sort_re	# thread based on regex
+set reply_regexp="^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set smart_wrap
+set menu_scroll
+set pager_stop
+unset markers
+
+# formats
+set date_format="%d%b %H%M"
+set index_format="%4C %Z %D %-15.15F %s"
+set status_format="[%f, Msgs: %m%?n? New: %n?%?d? Del: %d?%?t? Tag: %t?%?l? %l? ]%?p?---- .: %p waiting to send :. ?--%>- (%P) ---"
+set alias_format        = "%4n %t %-20a  %r"
+
+set mbox_type=Maildir
+set folder=~/Mail
+set spoolfile=+Gmail/'Gmail In'
+mailboxes =Gmail/'Gmail In'
+set alias_file=~/.mutt/aliases
+set mailcap_path=~/.mailcap
+auto_view text/html
+
+# Cache email headers and store in .muttheaders/
+set header_cache="~/.muttheaders/"
+
+# Emails mutt should consider being from me
+#set alternates=
+
+ignore * #ignore all headers...
+unignore date from subject to cc #then show these
+
+# Source files
+source ~/.mutt/colors
+source ~/.mutt/aliases
+source ~/.mutt/mailboxes
+source ~/.mutt/sidebar
+source ~/.mutt/bindings
+source ~/.mutt/hooks
+
+
+# Mailing lists
+subscribe arch-announce arch-general
+subscribe mutt-users
+subscribe ma-linux
+subscribe ubuntu
+
+# PGP Settings
+# set pgp_replyencrypt 		# encrypt replys to encrypted messages
+# set pgp_replysignencrypt	# autosign
+# set pgp_show_unusable		# don't show revoked keys in menu
+
+set editor="vim +:silent+?^$""
+set pager_index_lines=7
+set pager_context=3

@@ -1,0 +1,19 @@
+# settings
+set sidebar_delim       = '│'
+set sidebar_visible     = no
+set sidebar_width       = 20
+set sidebar_sort	= yes
+
+# colors
+color sidebar_new brightyellow default
+
+# bindings
+bind index,pager \CN    sidebar-next
+bind index,pager \CP    sidebar-prev
+bind index,pager \CO    sidebar-open
+
+# b toggles sidebar visibility
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+
+

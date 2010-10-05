@@ -1,0 +1,40 @@
+[general]
+# NOTE: cronjob calls the quiet UI with -u
+ui = TTY.TTYUI
+accounts = Gmail,GMX
+maxsyncaccounts = 6
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Account GMX]
+localrepository = GMX-Local
+remoterepository = GMX-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/Mail/Gmail
+
+[Repository GMX-Local]
+type = Maildir
+localfolders = ~/Mail/GMX
+
+[Repository Gmail-Remote]
+type = Gmail 
+remoteuser = me@gmail.com
+remotepass = password
+maxconnections = 3
+realdelete = no
+nametrans = lambda folder: re.sub('.*INBOX$', 'Gmail In', re.sub('.*Spam$', 'Spam', re.sub('.*Drafts$', 'Drafts', re.sub('.*Sent Mail$', 'Sent', re.sub('.*Starred$', 'Flagged', re.sub('.*Trash$', 'Trash', re.sub('.*All Mail$', 'Archive', folder)))))))
+
+[Repository GMX-Remote]
+type = IMAP
+remotehost = imap.gmx.com
+remoteport = 143
+remoteuser = me2@gmx.com
+remotepass = password
+maxconnections = 3
+nametrans = lambda folder: re.sub('.*INBOX$', 'GMX In', folder)
+
+# vim: ft=cfg tw=0

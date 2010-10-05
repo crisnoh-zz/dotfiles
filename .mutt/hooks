@@ -1,0 +1,2 @@
+folder-hook Gmail/*      source ~/.mutt/gmail.muttrc
+folder-hook GMX/*        source ~/.mutt/gmx.muttrc
